@@ -18,6 +18,7 @@ import {
 
 import data from '../data/projectsData';
 import { useState } from 'react';
+import styled from 'styled-components';
 
 const Projects = () => {
   const [popup, setPopup] = useState([]);
@@ -29,7 +30,7 @@ const Projects = () => {
   };
 
   return (
-    <div className='section-padding bg-dark-v2'>
+    <Wrapper className='section-padding bg-dark-v2'>
       <div className='container'>
         <div className='heading text-center mb-30'>
           <h6>Our Recent</h6>
@@ -125,8 +126,26 @@ const Projects = () => {
           </div>
         )}
       </div>
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  .popup-body {
+    width: 90%;
+    height: auto;
+    background-color: #222;
+    text-align: center;
+    padding: 0px;
+    @media (min-width: 992px) {
+      width: 70%;
+    }
+  }
+
+  .project-info {
+    text-align: center;
+    background-color: var(--color-dark-v1);
+  }
+`;
 
 export default Projects;

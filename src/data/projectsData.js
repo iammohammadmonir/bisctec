@@ -111,10 +111,7 @@ const projectsData = [
         id: 16,
         galleryImage: './images/projects/wr-neustadt/WNZ16.jpg',
       },
-      {
-        id: 16,
-        galleryImage: './images/projects/wr-neustadt/WNZ16.jpg',
-      },
+
       {
         id: 17,
         galleryImage: './images/projects/wr-neustadt/WNZ17.jpg',

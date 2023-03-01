@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import data from '../data/productsData';
+import FormRow from './FormRow';
 
 const Product = () => {
   const [productPopup, setProductPopup] = useState([]);
@@ -42,7 +43,34 @@ const Product = () => {
               <div onClick={changeContent} className='close'>
                 Close
               </div>
-              <div className='product-popup-content'>{productPopup}</div>
+              <div className='product-popup-content'>
+                <div>
+                  <form className='form'>
+                    <h2 className='mb-50'>{productPopup}</h2>
+                    <div className='row mb-20'>
+                      <div className='col-lg-6'>
+                        <FormRow type='text' name='Ihr Name' />
+                      </div>
+                      <div className='col-lg-6'>
+                        <FormRow type='text' name='Ihr Name' />
+                      </div>
+                    </div>
+                    <div className='row'>
+                      <div className='col-lg-6'>
+                        <FormRow type='text' name='Email' />
+                      </div>
+                      <div className='col-lg-6'>
+                        <FormRow type='text' name='Phone' />
+                      </div>
+                    </div>
+                    <div className=''>
+                      <button className='btn submit' type='submit'>
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         )}

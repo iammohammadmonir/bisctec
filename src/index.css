@@ -338,11 +338,18 @@ p {
 
 .btn {
   display: inline-block;
-  background-color: red;
+  background-color: var(--color-red);
   padding: 8px 20px;
   border-radius: 4px;
+  font-family: inherit;
 }
-
+.btn.submit {
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 15px 50px;
+  cursor: pointer;
+}
 /* Project */
 .project-info {
   padding: 15px;
@@ -375,14 +382,6 @@ p {
   justify-content: center;
   z-index: 999;
   background: rgba(0, 0, 0, 0.8);
-}
-
-.popup-body {
-  width: 70%;
-  height: auto;
-  background-color: #222;
-  text-align: center;
-  padding: 0px;
 }
 
 .galleryImg .swiper-slide {
@@ -542,4 +541,58 @@ p {
 
 .mySwiper .swiper-slide {
   max-width: 500px !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: var(--color-red) !important;
+}
+
+/* form */
+
+.form {
+  width: 100%;
+  max-width: 80%;
+  padding: 20px;
+  margin: 3rem auto;
+}
+.form:hover {
+  box-shadow: var(--shadow-4);
+}
+.form-label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 16px;
+  text-transform: capitalize;
+  text-align: left;
+}
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  background: var(--color-dark-v1);
+  border: 1px solid #333;
+  font-size: 16px;
+  color: #fff;
+}
+.form-input {
+  height: 44px;
+}
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-textarea {
+  height: 7rem;
+}
+::placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+.form-alert {
+  color: var(--red-dark);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
 }

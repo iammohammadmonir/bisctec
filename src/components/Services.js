@@ -16,7 +16,7 @@ const Services = () => {
       <div className='container'>
         <div className='row'>
           <div className='col-lg-4'>
-            <div className='heading  mt-30'>
+            <div className='heading  mt-30 mb-50'>
               <h6>Our Awesome</h6>
               <h2>Services</h2>
             </div>
