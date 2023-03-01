@@ -489,12 +489,18 @@ p {
 
 .product-popup-body {
   width: 70%;
-  height: auto;
+  height: 80%;
   background-color: #222;
   text-align: center;
   padding: 0px;
 }
-
+@media (max-width: 992px) {
+  .product-popup-body {
+    width: 90%;
+    height: auto;
+    overflow: auto;
+  }
+}
 .product-popup-body {
   position: relative;
 }
@@ -552,10 +558,19 @@ p {
 
 .form {
   width: 100%;
-  max-width: 80%;
-  padding: 20px;
-  margin: 3rem auto;
+  max-width: 100%;
+  padding: 20px 0;
+  margin: 1rem auto;
 }
+@media (min-width: 992px) {
+  .form {
+    width: 100%;
+    max-width: 80%;
+    padding: 20px;
+    margin: 3rem auto;
+  }
+}
+
 .form:hover {
   box-shadow: var(--shadow-4);
 }
