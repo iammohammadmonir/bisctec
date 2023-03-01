@@ -44,7 +44,6 @@ const About = () => {
           </div>
           <div className='col-lg-6'>
             <Video
-              muted
               controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
               poster={AboutImg}
               onCanPlayThrough={() => {
