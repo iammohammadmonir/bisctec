@@ -1,4 +1,5 @@
 import About from './components/About';
+import Hero from './components/Hero';
 import Product from './components/Product';
 import Projects from './components/Projects';
 import Services from './components/Services';
@@ -8,6 +9,7 @@ import Testimonials from './components/Testimonials';
 function App() {
   return (
     <div className='App'>
+      <Hero />
       <About />
       <Product />
       <Services />
