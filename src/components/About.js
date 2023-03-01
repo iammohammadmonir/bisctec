@@ -40,6 +40,18 @@ const About = () => {
                 Kunde wiederkommt, und nicht unsere Ware. Das ist unsere
                 Leidenschaft und Verantwortung.
               </p>
+              <p>
+                Eine Investition ist dann wirklich günstig, wenn die
+                Gesamtkostenrechnung stimmt, also die „Total Costs of Ownership“
+                . Auch da bieten wir Ihnen unsere Expertise an. In einer
+                Amortisations-Rechnung, stellt sich nicht nur die Frage: was
+                etwas kostet, denn viel interessanter ist die Antwort auf: Was
+                kostet es, und vor allem, was bringt es!!! Und auf die oft
+                gestellte Frage, was denn ein LED Videoscreen kostet, antworten
+                wir gerne mit der Gegenfrage: Was kostet denn ein Stück Auto?
+                Meinen Sie einen alten Traktor, eine praktische Familienkutsche,
+                einen roten Sportwagen oder gar eine royale Luxus-Limosine?
+              </p>
             </div>
           </div>
           <div className='col-lg-6'>
@@ -52,22 +64,6 @@ const About = () => {
             >
               <source src={AboutVideo} type='video/mp4' />
             </Video>
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col'>
-            <p>
-              Eine Investition ist dann wirklich günstig, wenn die
-              Gesamtkostenrechnung stimmt, also die „Total Costs of Ownership“ .
-              Auch da bieten wir Ihnen unsere Expertise an. In einer
-              Amortisations-Rechnung, stellt sich nicht nur die Frage: was etwas
-              kostet, denn viel interessanter ist die Antwort auf: Was kostet
-              es, und vor allem, was bringt es!!! Und auf die oft gestellte
-              Frage, was denn ein LED Videoscreen kostet, antworten wir gerne
-              mit der Gegenfrage: Was kostet denn ein Stück Auto? Meinen Sie
-              einen alten Traktor, eine praktische Familienkutsche, einen roten
-              Sportwagen oder gar eine royale Luxus-Limosine?
-            </p>
           </div>
         </div>
       </div>
