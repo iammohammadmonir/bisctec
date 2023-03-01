@@ -43,19 +43,20 @@ const Projects = () => {
               centeredSlides={true}
               slidesPerView={'auto'}
               coverflowEffect={{
-                rotate: 50,
+                rotate: 0,
                 stretch: 0,
                 depth: 100,
                 modifier: 1,
                 slideShadows: true,
               }}
+              navigation={true}
               pagination={{
                 clickable: true,
               }}
               autoplay={{
                 delay: 2500,
               }}
-              modules={[EffectCoverflow, Autoplay, Pagination]}
+              modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
               className='mySwiper'
             >
               {data.map((project) => {

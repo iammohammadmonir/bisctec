@@ -535,3 +535,11 @@ p {
 .testimonial-auth p {
   color: #ccc;
 }
+
+.mySwiper .swiper-slide-active {
+  transform: scale(1.1) !important;
+}
+
+.mySwiper .swiper-slide {
+  max-width: 500px !important;
+}
