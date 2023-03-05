@@ -35,9 +35,20 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
+
               <li>
-                <NavLink className='active-link' to='/about'>
-                  About
+                <NavLink className='active-link' to='/technologie'>
+                  Technologie
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className='active-link' to='/impressum'>
+                  Impressum
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className='active-link' to='/kontakt'>
+                  Kontakt
                 </NavLink>
               </li>
             </ul>

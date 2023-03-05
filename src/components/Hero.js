@@ -30,17 +30,21 @@ const Wrapper = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    bottom: 10%;
+    bottom: 5%;
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: center;
     color: white;
     h1 {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.2);
       margin-bottom: 0 !important;
       padding: 10px 15px;
       border-radius: 4px;
+      font-size: 24px;
+      @media (min-width: 992px) {
+        font-size: 48px;
+      }
     }
   }
 
