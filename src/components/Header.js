@@ -71,21 +71,24 @@ const Header = () => {
                   <div className='sm-menu'>
                     <ul>
                       <li>
-                        <NavLink
-                          onClick={changeContent}
-                          className='active-link'
-                          to='/'
-                        >
+                        <NavLink className='active-link' to='/'>
                           Home
                         </NavLink>
                       </li>
+
                       <li>
-                        <NavLink
-                          onClick={changeContent}
-                          className='active-link'
-                          to='/about'
-                        >
-                          About
+                        <NavLink className='active-link' to='/technologie'>
+                          Technologie
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink className='active-link' to='/impressum'>
+                          Impressum
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink className='active-link' to='/kontakt'>
+                          Kontakt
                         </NavLink>
                       </li>
                     </ul>
