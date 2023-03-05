@@ -4,10 +4,13 @@ import videoBg from '../assets/img/main.mp4';
 const Hero = () => {
   return (
     <Wrapper className='hero'>
-      <div className='overlay'></div>
       <video src={videoBg} autoPlay loop muted />
       <div className='content'>
-        <h1>big screen technology GmbH</h1>
+        <h1>
+          <span className='text-red'>bi</span>g{' '}
+          <span className='text-green'>sc</span>reen{' '}
+          <span className='text-blue'>te</span>chnology GmbH
+        </h1>
       </div>
     </Wrapper>
   );
@@ -27,12 +30,18 @@ const Wrapper = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
+    bottom: 10%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     color: white;
+    h1 {
+      background-color: rgba(0, 0, 0, 0.5);
+      margin-bottom: 0 !important;
+      padding: 10px 15px;
+      border-radius: 4px;
+    }
   }
 
   .overlay {

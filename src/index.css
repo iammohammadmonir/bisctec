@@ -3,6 +3,8 @@
 :root {
   --transition: all 0.3s linear;
   --color-red: #e6241a;
+  --color-green: #599b30;
+  --color-blue: #0358b7;
   --color-dark-v1: #1d1d1d;
   --color-dark-v2: #292929;
 }
@@ -308,6 +310,11 @@ p {
   text-align: center;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-0 {
   margin-bottom: 0 !important;
 }
@@ -315,6 +322,7 @@ p {
 .mt-30 {
   margin-top: 30px !important;
 }
+
 .mb-30 {
   margin-bottom: 30px !important;
 }
@@ -611,4 +619,16 @@ p {
   color: var(--red-dark);
   letter-spacing: var(--letterSpacing);
   text-transform: capitalize;
+}
+
+.text-red {
+  color: var(--color-red);
+}
+
+.text-green {
+  color: var(--color-green);
+}
+
+.text-blue {
+  color: var(--color-blue);
 }

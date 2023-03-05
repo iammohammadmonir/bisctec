@@ -1,24 +1,22 @@
-import About from './components/About';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Product from './components/Product';
-import Projects from './components/Projects';
-import Services from './components/Services';
-import Technologie from './components/Technologie';
-import Testimonials from './components/Testimonials';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const Loading = lazy(() => import('./components/Loading'));
+const Header = lazy(() => import('./components/Header'));
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
 
 function App() {
   return (
-    <div className='App'>
+    <BrowserRouter>
       <Header />
-      <Hero />
-      <About />
-      <Product />
-      <Services />
-      <Projects />
-      <Technologie />
-      <Testimonials />
-    </div>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
