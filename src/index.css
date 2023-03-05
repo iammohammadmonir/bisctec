@@ -319,6 +319,10 @@ p {
   margin-bottom: 0 !important;
 }
 
+.mt-20 {
+  margin-top: 20px !important;
+}
+
 .mt-30 {
   margin-top: 30px !important;
 }
@@ -526,13 +530,12 @@ p {
   width: 70%;
   height: 80%;
   background-color: #222;
-  text-align: center;
   padding: 0px;
   overflow: auto;
 }
 @media (max-width: 992px) {
   .product-popup-body {
-    width: 90%;
+    width: 100%;
     height: auto;
     overflow: auto;
   }
@@ -548,7 +551,6 @@ p {
 .product-info {
   padding: 20px;
   background-color: var(--color-dark-v1);
-  text-align: center;
   min-height: 112px;
   display: flex;
   align-items: center;
@@ -595,18 +597,16 @@ p {
 
 .form {
   width: 100%;
-  max-width: 100%;
   padding: 20px 0;
   margin: 1rem auto;
 }
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .form {
     width: 100%;
-    max-width: 80%;
     padding: 20px;
     margin: 3rem auto;
   }
-}
+} */
 
 .form:hover {
   box-shadow: var(--shadow-4);
@@ -637,9 +637,9 @@ p {
   outline: none;
   border: 1px solid #777;
 }
-.form-row {
+/* .form-row {
   margin-bottom: 1rem;
-}
+} */
 
 .form-textarea {
   height: 7rem;
@@ -669,4 +669,18 @@ p {
 
 .text-blue {
   color: var(--color-blue);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
