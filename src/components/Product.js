@@ -28,7 +28,7 @@ const Product = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const { projectTitle, width, height, name, email, phone } = values;
+    const { projectTitle } = values;
     console.log(projectTitle);
   };
 

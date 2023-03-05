@@ -431,13 +431,16 @@ p {
   position: absolute;
   z-index: 99;
   right: 0;
-  top: -30px;
+  top: 0;
   line-height: 24px;
   letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 12px;
   cursor: pointer;
+}
+.project-popup .close {
+  top: -30px;
 }
 
 .faqs {
