@@ -265,7 +265,17 @@ const Product = () => {
                         </div>
                       </div>
                     </div>
-
+                    <div className='inq-form'>
+                      <div className='inq-label'>Special Note</div>
+                      <div className='inq-input'>
+                        <FormRow2
+                          type='text'
+                          name='projectTitle'
+                          value={values.snote}
+                          handleChange={handleChange}
+                        />
+                      </div>
+                    </div>
                     <div className='mt-20'>
                       <div className='form-footer'>
                         <button className='btn submit' type='submit'>

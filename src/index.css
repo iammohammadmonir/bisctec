@@ -535,8 +535,8 @@ p {
 }
 @media (max-width: 992px) {
   .product-popup-body {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 80%;
     overflow: auto;
   }
 }
