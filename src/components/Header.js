@@ -82,17 +82,29 @@ const Header = () => {
                   <div className='social'>
                     <ul>
                       <li>
-                        <a target='_blank' href='https://facebook.com/bisctec'>
+                        <a
+                          target='_blank'
+                          rel='noopener'
+                          href='https://facebook.com/bisctec'
+                        >
                           <BsFacebook />
                         </a>
                       </li>
                       <li>
-                        <a target='_blank' href='https://facebook.com/bisctec'>
+                        <a
+                          target='_blank'
+                          rel='noopener'
+                          href='https://facebook.com/bisctec'
+                        >
                           <BsLinkedin />
                         </a>
                       </li>
                       <li>
-                        <a target='_blank' href='https://facebook.com/bisctec'>
+                        <a
+                          target='_blank'
+                          rel='noopener'
+                          href='https://facebook.com/bisctec'
+                        >
                           <BsYoutube />
                         </a>
                       </li>
