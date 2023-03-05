@@ -2,6 +2,16 @@ import { useState } from 'react';
 import data from '../data/productsData';
 import FormRow from './FormRow';
 
+const initialState = {
+  projectTitle: '',
+  name: '',
+  email: '',
+  phone: '',
+  width: '',
+  height: '',
+  map: '',
+};
+
 const Product = () => {
   const [productPopup, setProductPopup] = useState([]);
   const [productPopupClose, setProductPopupClose] = useState(false);
@@ -9,6 +19,17 @@ const Product = () => {
   const changeContent = (product) => {
     setProductPopup(product);
     setProductPopupClose(!productPopupClose);
+  };
+
+  const [values, setValues] = useState(initialState);
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const { projectTitle, width, height, name, email, phone } = values;
+    console.log(projectTitle);
   };
 
   return (
@@ -45,24 +66,79 @@ const Product = () => {
               </div>
               <div className='product-popup-content'>
                 <div>
-                  <form className='form'>
+                  <form className='form' onSubmit={onSubmit}>
                     <h2 className='mb-50'>{productPopup}</h2>
-                    <div className='row mb-20'>
-                      <div className='col-lg-6'>
-                        <FormRow type='text' name='Ihr Name' />
+
+                    <FormRow
+                      type='text'
+                      name='projectTitle'
+                      labelText='Project Title'
+                      value={productPopup}
+                      handleChange={handleChange}
+                    />
+
+                    <div className='row'>
+                      <div className='col-4'>
+                        <FormRow
+                          type='text'
+                          name='width'
+                          labelText='Width'
+                          value={values.width}
+                          handleChange={handleChange}
+                        />
                       </div>
-                      <div className='col-lg-6'>
-                        <FormRow type='text' name='Ihr Name' />
+                      <div className='col-4'>
+                        <FormRow
+                          type='text'
+                          name='height'
+                          labelText='height'
+                          value={values.height}
+                          handleChange={handleChange}
+                        />
+                      </div>
+                      <div className='col-4'>
+                        <div>
+                          <label className='form-label'>Width x Height</label>
+                        </div>
+                        <div className='form-input'>
+                          {values.height * values.width} m <sup>2</sup>
+                        </div>
                       </div>
                     </div>
+                    <FormRow
+                      type='text'
+                      name='name'
+                      labelText='Name'
+                      value={values.name}
+                      handleChange={handleChange}
+                    />
                     <div className='row'>
                       <div className='col-lg-6'>
-                        <FormRow type='text' name='Email' />
+                        <FormRow
+                          type='email'
+                          name='email'
+                          labelText='Email'
+                          value={values.email}
+                          handleChange={handleChange}
+                        />
                       </div>
                       <div className='col-lg-6'>
-                        <FormRow type='text' name='Phone' />
+                        <FormRow
+                          type='text'
+                          name='phone'
+                          labelText='Phone'
+                          value={values.phone}
+                          handleChange={handleChange}
+                        />
                       </div>
                     </div>
+                    <FormRow
+                      type='text'
+                      name='map'
+                      labelText='Google map location link'
+                      value={values.map}
+                      handleChange={handleChange}
+                    />
                     <div className=''>
                       <button className='btn submit' type='submit'>
                         Submit
