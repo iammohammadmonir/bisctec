@@ -188,7 +188,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     background: var(--color-dark-v1);
-    margin-top: -10px;
+
     .logo {
       width: 150px;
       margin: 0 auto;
@@ -205,7 +205,7 @@ const Wrapper = styled.div`
             color: #fff;
             text-decoration: none;
             display: block;
-            padding: 10px 0;
+            padding: 8px 0;
             border-top: 1px solid #777;
             border-bottom: 1px solid #777;
             margin: 10px 0;
