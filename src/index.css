@@ -527,8 +527,8 @@ p {
 }
 
 .product-popup-body {
-  width: 70%;
-  height: 80%;
+  max-width: 800px;
+  height: auto;
   background-color: #222;
   padding: 0px;
   overflow: auto;
@@ -597,7 +597,6 @@ p {
 
 .form {
   width: 100%;
-  padding: 20px 0;
   margin: 1rem auto;
 }
 /* @media (min-width: 992px) {
@@ -613,8 +612,8 @@ p {
 }
 .form-label {
   display: block;
-  font-size: 16px;
-  margin-bottom: 16px;
+  font-size: 14px;
+  margin-bottom: 12px;
   text-transform: capitalize;
   text-align: left;
 }
@@ -631,7 +630,7 @@ p {
 }
 
 .form-input {
-  height: 44px;
+  height: 30px;
 }
 .form-input:focus {
   outline: none;
@@ -683,4 +682,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.btn-text {
+  color: #fff;
 }

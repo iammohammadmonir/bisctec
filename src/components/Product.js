@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import data from '../data/productsData';
 import FormRow2 from './FormRow2';
+import Loading from './Loading';
+import { useAppContext } from '../context/appContext';
+import { useNavigate } from 'react-router-dom';
+import Alert from './Alert';
 
 const initialState = {
   projectTitle: '',
@@ -22,6 +26,9 @@ const initialState = {
 };
 
 const Product = () => {
+  const navigate = useNavigate();
+  const { showAlert, displayAlert, alertType, createOrder, orders, isLoading } =
+    useAppContext();
   const [productPopup, setProductPopup] = useState([]);
   const [productPopupClose, setProductPopupClose] = useState(false);
 
@@ -37,10 +44,67 @@ const Product = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const { projectTitle } = values;
-    console.log(projectTitle);
+    const {
+      projectTitle,
+      name,
+      email,
+      phone,
+      width,
+      height,
+      map,
+      side,
+      pnote,
+      snote,
+      company,
+      street,
+      zip,
+      city,
+      country,
+    } = values;
+    if (
+      !projectTitle ||
+      !name ||
+      !email ||
+      !phone ||
+      !width ||
+      !height ||
+      !map ||
+      !side ||
+      !company ||
+      !street ||
+      !zip ||
+      !city ||
+      !country
+    ) {
+      displayAlert();
+      return;
+    }
+    const data = {
+      projectTitle,
+      name,
+      email,
+      phone,
+      width,
+      height,
+      map,
+      side,
+      pnote,
+      snote,
+      company,
+      street,
+      zip,
+      city,
+      country,
+    };
+    createOrder(data);
   };
-
+  useEffect(() => {
+    if (orders) {
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
+    }
+  }, [orders, navigate]);
   return (
     <Wrapper className='section-padding bg-dark-v2'>
       <div className='container'>
@@ -75,8 +139,9 @@ const Product = () => {
               </div>
               <div className='product-popup-content'>
                 <div>
+                  {showAlert && <Alert />}
                   <form className='form' onSubmit={onSubmit}>
-                    <h2 className='mb-50'>{productPopup}</h2>
+                    <h4 className='mb-30 text-center'>{productPopup}</h4>
 
                     <div className='inq-form'>
                       <div className='inq-label'>Project Title</div>
@@ -84,7 +149,7 @@ const Product = () => {
                         <FormRow2
                           type='text'
                           name='projectTitle'
-                          value={productPopup}
+                          value={values.projectTitle}
                           handleChange={handleChange}
                         />
                       </div>
@@ -146,7 +211,7 @@ const Product = () => {
                       <div className='inq-input'>
                         <FormRow2
                           type='text'
-                          name='projectTitle'
+                          name='map'
                           value={values.map}
                           handleChange={handleChange}
                         />
@@ -158,7 +223,7 @@ const Product = () => {
                       <div className='inq-input'>
                         <FormRow2
                           type='text'
-                          name='projectTitle'
+                          name='pnote'
                           value={values.pnote}
                           handleChange={handleChange}
                         />
@@ -172,7 +237,7 @@ const Product = () => {
                           <div className='inq-input'>
                             <FormRow2
                               type='text'
-                              name='projectTitle'
+                              name='name'
                               value={values.name}
                               handleChange={handleChange}
                             />
@@ -183,7 +248,7 @@ const Product = () => {
                           <div className='inq-input'>
                             <FormRow2
                               type='text'
-                              name='projectTitle'
+                              name='company'
                               value={values.company}
                               handleChange={handleChange}
                             />
@@ -198,7 +263,7 @@ const Product = () => {
                           <div className='inq-input'>
                             <FormRow2
                               type='text'
-                              name='projectTitle'
+                              name='email'
                               value={values.email}
                               handleChange={handleChange}
                             />
@@ -209,7 +274,7 @@ const Product = () => {
                           <div className='inq-input'>
                             <FormRow2
                               type='text'
-                              name='projectTitle'
+                              name='phone'
                               value={values.phone}
                               handleChange={handleChange}
                             />
@@ -224,7 +289,7 @@ const Product = () => {
                           <div className='inq-input'>
                             <FormRow2
                               type='text'
-                              name='projectTitle'
+                              name='street'
                               value={values.street}
                               handleChange={handleChange}
                             />
@@ -235,7 +300,7 @@ const Product = () => {
                           <div className='inq-input'>
                             <FormRow2
                               type='text'
-                              name='projectTitle'
+                              name='zip'
                               value={values.zip}
                               handleChange={handleChange}
                             />
@@ -246,7 +311,7 @@ const Product = () => {
                           <div className='inq-input'>
                             <FormRow2
                               type='text'
-                              name='projectTitle'
+                              name='city'
                               value={values.city}
                               handleChange={handleChange}
                             />
@@ -257,7 +322,7 @@ const Product = () => {
                           <div className='inq-input'>
                             <FormRow2
                               type='text'
-                              name='projectTitle'
+                              name='country'
                               value={values.country}
                               handleChange={handleChange}
                             />
@@ -270,7 +335,7 @@ const Product = () => {
                       <div className='inq-input'>
                         <FormRow2
                           type='text'
-                          name='projectTitle'
+                          name='snote'
                           value={values.snote}
                           handleChange={handleChange}
                         />
@@ -279,7 +344,7 @@ const Product = () => {
                     <div className='mt-20'>
                       <div className='form-footer'>
                         <button className='btn submit' type='submit'>
-                          Submit
+                          {isLoading ? 'Loading...' : ' Submit'}
                         </button>
                         <div className='contact'>
                           <div>
@@ -298,6 +363,14 @@ const Product = () => {
                   </form>
                 </div>
               </div>
+            </div>
+          </div>
+        )}
+        {isLoading && (
+          <div className='isloading'>
+            <div className='text-center'>
+              <Loading />
+              <h1>Accepting request...</h1>
             </div>
           </div>
         )}
@@ -347,13 +420,13 @@ const Wrapper = styled.div`
     .width {
       width: 80px;
       @media (min-width: 992px) {
-        width: 120px;
+        width: 90px;
       }
     }
     .height {
       width: 80px;
       @media (min-width: 992px) {
-        width: 120px;
+        width: 90px;
       }
     }
     .form-sign {
@@ -384,6 +457,23 @@ const Wrapper = styled.div`
         color: var(--blue) !important;
       }
     }
+  }
+  .inq-label {
+    font-size: 14px;
+  }
+  .isloading {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-dar-v1) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999999;
   }
 `;
 
