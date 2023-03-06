@@ -1,4 +1,4 @@
-import React, { useReducer, useContext, useEffect } from 'react';
+import React, { useReducer, useContext } from 'react';
 import reducer from './reducer';
 
 import {
@@ -43,7 +43,7 @@ const AppProvider = ({ children }) => {
     dispatch({ type: GET_ORDERS_BEGIN });
     try {
       const response = await axios.get(
-        'https://senamart.onrender.com/api/v1/order'
+        'https://bisctec.onrender.com/api/v1/order'
       );
       const orders = response.data;
       dispatch({ type: GET_ORDERS_SUCCESS, payload: orders });
@@ -56,7 +56,7 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CREATE_ORDER_BEGIN });
     try {
       const response = await axios.post(
-        'https://senamart.onrender.com/api/v1/order',
+        'https://bisctec.onrender.com/api/v1/order',
         orderData
       );
       const order = response.data;
