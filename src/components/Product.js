@@ -27,7 +27,7 @@ const initialState = {
 
 const Product = () => {
   const navigate = useNavigate();
-  const { showAlert, displayAlert, alertType, createOrder, orders, isLoading } =
+  const { showAlert, displayAlert, createOrder, orders, isLoading } =
     useAppContext();
   const [productPopup, setProductPopup] = useState([]);
   const [productPopupClose, setProductPopupClose] = useState(false);

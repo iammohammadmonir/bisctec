@@ -42,7 +42,9 @@ const AppProvider = ({ children }) => {
   const fetchOrders = async () => {
     dispatch({ type: GET_ORDERS_BEGIN });
     try {
-      const response = await axios.get('/api/v1/order');
+      const response = await axios.get(
+        'https://senamart.onrender.com/api/v1/order'
+      );
       const orders = response.data;
       dispatch({ type: GET_ORDERS_SUCCESS, payload: orders });
     } catch (error) {
@@ -53,7 +55,10 @@ const AppProvider = ({ children }) => {
   const createOrder = async (orderData) => {
     dispatch({ type: CREATE_ORDER_BEGIN });
     try {
-      const response = await axios.post('/api/v1/order', orderData);
+      const response = await axios.post(
+        'https://senamart.onrender.com/api/v1/order',
+        orderData
+      );
       const order = response.data;
       dispatch({
         type: CREATE_ORDER_SUCCESS,
