@@ -91,14 +91,6 @@ const InqueryForm = () => {
     };
     createOrder(data);
   };
-  useEffect(() => {
-    if (alertType === 'success') {
-      setTimeout(() => {
-        navigate('/');
-        window.location.reload();
-      }, 4000);
-    }
-  }, [alertType === 'success', navigate]);
   return (
     <Wrapper className='from-container'>
       {showAlert && <Alert />}
