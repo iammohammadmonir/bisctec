@@ -26,15 +26,9 @@ const initialState = {
 
 const InqueryForm = () => {
   const navigate = useNavigate();
-  const { showAlert, alertType, displayAlert, createOrder, orders, isLoading } =
+  const { showAlert, alertType, displayAlert, createOrder, isLoading } =
     useAppContext();
-  const [productPopup, setProductPopup] = useState([]);
-  const [productPopupClose, setProductPopupClose] = useState(false);
-
-  const changeContent = (product) => {
-    setProductPopup(product);
-    setProductPopupClose(!productPopupClose);
-  };
+  const [productPopup] = useState([]);
 
   const [values, setValues] = useState(initialState);
   const handleChange = (e) => {

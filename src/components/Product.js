@@ -36,6 +36,7 @@ const Product = () => {
         window.location.reload();
       }, 4000);
     }
+    // eslint-disable-next-line
   }, [alertType === 'success', navigate]);
   return (
     <Wrapper className='section-padding bg-dark-v2'>
