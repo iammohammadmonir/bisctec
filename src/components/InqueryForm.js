@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import FormRow2 from './FormRow2';
 import { useAppContext } from '../context/appContext';
@@ -25,9 +25,7 @@ const initialState = {
 };
 
 const InqueryForm = () => {
-  const navigate = useNavigate();
-  const { showAlert, alertType, displayAlert, createOrder, isLoading } =
-    useAppContext();
+  const { showAlert, displayAlert, createOrder, isLoading } = useAppContext();
   const [productPopup] = useState([]);
 
   const [values, setValues] = useState(initialState);
