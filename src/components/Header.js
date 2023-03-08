@@ -174,7 +174,8 @@ const Wrapper = styled.div`
             margin-left: 30px;
             display: block;
 
-            &.active {
+            &.active,
+            &:hover {
               color: var(--color-red);
             }
           }
@@ -225,7 +226,9 @@ const Wrapper = styled.div`
             border-top: 1px solid #777;
             border-bottom: 1px solid #777;
             margin: 10px 0;
-            &.active {
+
+            &.active,
+            &:hover {
               color: var(--color-red);
               background: var(--color-dark-v2);
               border-top: 1px solid var(--color-red);
@@ -262,7 +265,7 @@ const Wrapper = styled.div`
       cursor: pointer;
       svg {
         font-size: 30px;
-        color: #777;
+        color: #fff;
         &:hover {
           color: var(--color-red);
         }

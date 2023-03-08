@@ -29,7 +29,7 @@ const reducer = (state, action) => {
         isLoading: false,
         showAlert: true,
         alertType: 'success',
-        alertText: 'Order success',
+        alertText: 'Your request successfully sent',
         orders: action.payload.orders,
       };
 
@@ -52,7 +52,7 @@ const reducer = (state, action) => {
         isLoading: false,
         showAlert: true,
         alertType: 'success',
-        alertText: 'Order success',
+        alertText: 'Your request successfully sent',
         orders: action.payload,
       };
 

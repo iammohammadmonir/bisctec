@@ -16,8 +16,8 @@ const projectsData = [
   {
     id: 3,
     image: './images/testimonials/florian.jpg',
-    title: 'Grohe ShowRoom Wien',
-    name: 'St. Florian',
+    title: 'Bürgermeister St. Florian',
+    name: 'Bernd Schützeneder',
     review: `Eine tolle Firma mit super LED VideoScreens, die auch bei vollem Sonnenschein ein herausragend gutes Bild haben. Die Firma war super flexibel und hatten ein perfektes Service. Die Mitarbeiter waren top qualifiziert und sehr freundlich. Bisctec hat unsere Leute in der Gemeinde wirklich begeistert. Jederzeit gerne wieder `,
   },
   {

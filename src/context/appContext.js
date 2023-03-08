@@ -36,7 +36,7 @@ const AppProvider = ({ children }) => {
   const clearAlert = () => {
     setTimeout(() => {
       dispatch({ type: CLEAR_ALERT });
-    }, 500);
+    }, 4000);
   };
 
   const fetchOrders = async () => {
@@ -64,7 +64,8 @@ const AppProvider = ({ children }) => {
         type: CREATE_ORDER_SUCCESS,
         payload: order,
       });
-      window.location.reload();
+
+      clearAlert();
     } catch (error) {
       dispatch({
         type: CREATE_ORDER_ERROR,

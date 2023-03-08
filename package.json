@@ -1,5 +1,6 @@
 {
   "name": "bisctec",
+  "homepage": "http://bisctec.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

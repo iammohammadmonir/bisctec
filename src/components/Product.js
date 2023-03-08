@@ -1,34 +1,26 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import data from '../data/productsData';
-import FormRow2 from './FormRow2';
 import Loading from './Loading';
 import { useAppContext } from '../context/appContext';
 import { useNavigate } from 'react-router-dom';
-import Alert from './Alert';
+import { BsXCircleFill } from 'react-icons/bs';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import InqueryForm from './InqueryForm';
 
-const initialState = {
-  projectTitle: '',
-  name: '',
-  email: '',
-  phone: '',
-  width: '',
-  height: '',
-  map: '',
-  side: '',
-  pnote: '',
-  snote: '',
-  company: '',
-  street: '',
-  zip: '',
-  city: '',
-  country: '',
-};
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/effect-creative';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Autoplay, EffectCreative, Navigation, Pagination } from 'swiper';
 
 const Product = () => {
   const navigate = useNavigate();
-  const { showAlert, displayAlert, createOrder, orders, isLoading } =
-    useAppContext();
+  const { alertType, isLoading } = useAppContext();
   const [productPopup, setProductPopup] = useState([]);
   const [productPopupClose, setProductPopupClose] = useState(false);
 
@@ -37,74 +29,14 @@ const Product = () => {
     setProductPopupClose(!productPopupClose);
   };
 
-  const [values, setValues] = useState(initialState);
-  const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const {
-      projectTitle,
-      name,
-      email,
-      phone,
-      width,
-      height,
-      map,
-      side,
-      pnote,
-      snote,
-      company,
-      street,
-      zip,
-      city,
-      country,
-    } = values;
-    if (
-      !projectTitle ||
-      !name ||
-      !email ||
-      !phone ||
-      !width ||
-      !height ||
-      !map ||
-      !side ||
-      !company ||
-      !street ||
-      !zip ||
-      !city ||
-      !country
-    ) {
-      displayAlert();
-      return;
-    }
-    const data = {
-      projectTitle,
-      name,
-      email,
-      phone,
-      width,
-      height,
-      map,
-      side,
-      pnote,
-      snote,
-      company,
-      street,
-      zip,
-      city,
-      country,
-    };
-    createOrder(data);
-  };
   useEffect(() => {
-    if (orders) {
+    if (alertType === 'success') {
       setTimeout(() => {
         navigate('/');
-      }, 1000);
+        window.location.reload();
+      }, 4000);
     }
-  }, [orders, navigate]);
+  }, [alertType === 'success', navigate]);
   return (
     <Wrapper className='section-padding bg-dark-v2'>
       <div className='container'>
@@ -114,17 +46,20 @@ const Product = () => {
         </div>
         <div className='row'>
           {data.map((product) => {
-            const { title, id, image, info } = product;
             return (
               <div
-                onClick={() => changeContent(info)}
-                key={id}
+                onClick={() => changeContent(product)}
+                key={product.id}
                 className='col-lg-4'
               >
                 <div className='product'>
-                  <img className='img-fluid' src={image} alt={title} />
+                  <img
+                    className='img-fluid'
+                    src={product.image}
+                    alt={product.title}
+                  />
                   <div className='product-info'>
-                    <h5 className='mb-0'>{title}</h5>
+                    <h5 className='mb-0'>{product.title}</h5>
                   </div>
                 </div>
               </div>
@@ -135,232 +70,63 @@ const Product = () => {
           <div className='product-popup'>
             <div className='product-popup-body'>
               <div onClick={changeContent} className='close'>
-                Close
+                <BsXCircleFill />
               </div>
               <div className='product-popup-content'>
                 <div>
-                  {showAlert && <Alert />}
-                  <form className='form' onSubmit={onSubmit}>
-                    <h4 className='mb-30 text-center'>{productPopup}</h4>
+                  <div className='project-header text-center'>
+                    <h5>{productPopup.title}</h5>
+                  </div>
+                  <div>
+                    <Swiper
+                      autoHeight={true}
+                      pagination={true}
+                      loop={true}
+                      navigation={true}
+                      autoplay={{
+                        delay: 2500000,
+                      }}
+                      grabCursor={true}
+                      effect={'creative'}
+                      creativeEffect={{
+                        prev: {
+                          shadow: true,
+                          translate: [0, 0, -300],
+                        },
+                        next: {
+                          translate: ['100%', 0, 0],
+                        },
+                      }}
+                      modules={[
+                        Autoplay,
+                        EffectCreative,
+                        Pagination,
+                        Navigation,
+                      ]}
+                      className='product-slider'
+                    >
+                      <SwiperSlide>
+                        <InqueryForm />
+                      </SwiperSlide>
 
-                    <div className='inq-form'>
-                      <div className='inq-label'>Project Title</div>
-                      <div className='inq-input'>
-                        <FormRow2
-                          type='text'
-                          name='projectTitle'
-                          value={values.projectTitle}
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div className='inq-form'>
-                      <div className='inq-label'>Grobe</div>
-                      <div className='inq-input desire'>
-                        <div>
-                          <div className='input-row one'>
-                            <div className='width'>
-                              <FormRow2
-                                type='text'
-                                name='width'
-                                value={values.width}
-                                handleChange={handleChange}
-                              />
-                            </div>
-                            <div className='form-sign'>x</div>
-                            <div className='height'>
-                              <FormRow2
-                                type='text'
-                                name='height'
-                                value={values.height}
-                                handleChange={handleChange}
-                              />
-                            </div>
-                            <div className='form-sign'>=</div>
-                            <div className='result1'>
-                              {values.height * values.width} m <sup>2</sup>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div className='input-row two'>
-                            <div className='side-input d-flex align-center'>
-                              <div>
-                                <FormRow2
-                                  type='text'
-                                  name='side'
-                                  value={values.side}
-                                  handleChange={handleChange}
-                                />
+                      {productPopup.slider.map((slide) => {
+                        const { image, id, size, name } = slide;
+                        return (
+                          <SwiperSlide key={id}>
+                            <div className='product-slider-img'>
+                              <div className='product-size'>
+                                <h5 className='mb-0'>{size}</h5>
                               </div>
-                              <div>Side</div>
+                              <img className='img-fluid' src={image} alt={id} />
+                              <div className='product-name'>
+                                <h5 className='mb-0'>{name}</h5>
+                              </div>
                             </div>
-                            <div className=''>
-                              &Sigma;{' '}
-                              {values.height * values.width * values.side} m
-                              <sup>2</sup>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className='inq-form'>
-                      <div className='inq-label'>Map Location</div>
-                      <div className='inq-input'>
-                        <FormRow2
-                          type='text'
-                          name='map'
-                          value={values.map}
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div className='inq-form'>
-                      <div className='inq-label'>Project Note</div>
-                      <div className='inq-input'>
-                        <FormRow2
-                          type='text'
-                          name='pnote'
-                          value={values.pnote}
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div className='mb-10'>
-                      <div className='row'>
-                        <div className='col-lg-6 layout-2'>
-                          <div className='inq-label'>Name</div>
-                          <div className='inq-input'>
-                            <FormRow2
-                              type='text'
-                              name='name'
-                              value={values.name}
-                              handleChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                        <div className='col-lg-6 layout-2'>
-                          <div className='inq-label'>Company</div>
-                          <div className='inq-input'>
-                            <FormRow2
-                              type='text'
-                              name='company'
-                              value={values.company}
-                              handleChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='mb-10'>
-                      <div className='row'>
-                        <div className='col-lg-6 layout-2'>
-                          <div className='inq-label'>Email</div>
-                          <div className='inq-input'>
-                            <FormRow2
-                              type='text'
-                              name='email'
-                              value={values.email}
-                              handleChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                        <div className='col-lg-6 layout-2'>
-                          <div className='inq-label'>Phone</div>
-                          <div className='inq-input'>
-                            <FormRow2
-                              type='text'
-                              name='phone'
-                              value={values.phone}
-                              handleChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='mb-10'>
-                      <div className='row'>
-                        <div className='col-lg-4 layout-2'>
-                          <div className='inq-label'>Street</div>
-                          <div className='inq-input'>
-                            <FormRow2
-                              type='text'
-                              name='street'
-                              value={values.street}
-                              handleChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                        <div className='col-lg-2 layout-2'>
-                          <div className='inq-label'>Zip</div>
-                          <div className='inq-input'>
-                            <FormRow2
-                              type='text'
-                              name='zip'
-                              value={values.zip}
-                              handleChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                        <div className='col-lg-3 layout-2'>
-                          <div className='inq-label'>city</div>
-                          <div className='inq-input'>
-                            <FormRow2
-                              type='text'
-                              name='city'
-                              value={values.city}
-                              handleChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                        <div className='col-lg-3 layout-2'>
-                          <div className='inq-label'>country</div>
-                          <div className='inq-input'>
-                            <FormRow2
-                              type='text'
-                              name='country'
-                              value={values.country}
-                              handleChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='inq-form'>
-                      <div className='inq-label'>Special Note</div>
-                      <div className='inq-input'>
-                        <FormRow2
-                          type='text'
-                          name='snote'
-                          value={values.snote}
-                          handleChange={handleChange}
-                        />
-                      </div>
-                    </div>
-                    <div className='mt-20'>
-                      <div className='form-footer'>
-                        <button className='btn submit' type='submit'>
-                          {isLoading ? 'Loading...' : ' Submit'}
-                        </button>
-                        <div className='contact'>
-                          <div>
-                            <a href='tel:+4917657745001'>
-                              +49 (176) 577 45 001
-                            </a>
-                          </div>
-                          <div>
-                            <a href='tel:+4369910100136'>
-                              +43 (699) 10 100 136
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
+                          </SwiperSlide>
+                        );
+                      })}
+                    </Swiper>
+                  </div>
                 </div>
               </div>
             </div>
@@ -368,9 +134,11 @@ const Product = () => {
         )}
         {isLoading && (
           <div className='isloading'>
-            <div className='text-center'>
-              <Loading />
-              <h1>Accepting request...</h1>
+            <div className='loading-mid'>
+              <div className='text-center'>
+                <Loading />
+                <h4>Accepting request...</h4>
+              </div>
             </div>
           </div>
         )}
@@ -404,7 +172,7 @@ const Wrapper = styled.div`
   .inq-input.desire {
     @media (min-width: 992px) {
       display: grid;
-      gap: 10px;
+      gap: 50px;
       grid-template-columns: 7fr 5fr;
     }
   }
@@ -458,9 +226,11 @@ const Wrapper = styled.div`
       }
     }
   }
+
   .inq-label {
     font-size: 14px;
   }
+
   .isloading {
     position: fixed;
     top: 0;
@@ -469,11 +239,71 @@ const Wrapper = styled.div`
     right: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-dar-v1) !important;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 999999999999;
+    .loading-mid {
+      max-width: 800px;
+      height: auto;
+      background-color: var(--color-dark-v1);
+      padding: 20px;
+      overflow: auto;
+      border-radius: 6px;
+    }
+  }
+  .thanks {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-red) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999999;
+  }
+  .product-popup-content {
+    max-width: 800px;
+  }
+  .product-slider-img {
+    position: relative;
+    .product-size {
+      text-align: center;
+      position: absolute;
+      padding: 10px;
+      margin: auto;
+      top: 5px;
+      width: 100%;
+      h5 {
+        color: var(--color-blue);
+        background-color: rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        padding: 2px 15px;
+        border: 1px solid var(--color-blue);
+        border-radius: 4px;
+      }
+    }
+    .product-name {
+      text-align: center;
+      position: absolute;
+      padding: 10px;
+      margin: auto;
+      width: 100%;
+      bottom: 20px;
+      h5 {
+        color: var(--color-red);
+        background-color: rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        padding: 2px 15px;
+        border: 1px solid var(--color-red);
+        border-radius: 4px;
+      }
+    }
   }
 `;
 

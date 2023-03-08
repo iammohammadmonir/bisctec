@@ -1,169 +1,207 @@
 const projectsData = [
   {
     id: 1,
-    image: './images/projects/bad-kreuznach/MB10.jpg',
+    image:
+      'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108056/bisctec/projects/bad-kreuznach/MB10_d3tj76.jpg',
     title: 'Bad Kreuznach',
     quote:
       'Fingerstache umami squid, kinfolk subway tile selvage tumblr man braid viral kombucha gentrify fanny pack raclette pok pok mustache.',
     gallery: [
       {
         id: 1,
-        galleryImage: './images/projects/bad-kreuznach/MB01.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108064/bisctec/projects/bad-kreuznach/MB01_ajevyl.jpg',
       },
       {
         id: 2,
-        galleryImage: './images/projects/bad-kreuznach/MB02.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108060/bisctec/projects/bad-kreuznach/MB02_pdcxur.jpg',
       },
       {
         id: 3,
-        galleryImage: './images/projects/bad-kreuznach/MB03.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108061/bisctec/projects/bad-kreuznach/MB03_kjcopg.jpg',
       },
       {
         id: 4,
-        galleryImage: './images/projects/bad-kreuznach/MB04.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108061/bisctec/projects/bad-kreuznach/MB04_kzsxmt.jpg',
       },
       {
         id: 5,
-        galleryImage: './images/projects/bad-kreuznach/MB05.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108061/bisctec/projects/bad-kreuznach/MB05_h9nkn5.jpg',
       },
       {
         id: 6,
-        galleryImage: './images/projects/bad-kreuznach/MB06.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108074/bisctec/projects/bad-kreuznach/MB06_agesso.jpg',
       },
       {
         id: 7,
-        galleryImage: './images/projects/bad-kreuznach/MB07.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108101/bisctec/projects/bad-kreuznach/MB07_puqn5w.jpg',
       },
       {
         id: 8,
-        galleryImage: './images/projects/bad-kreuznach/MB08.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108067/bisctec/projects/bad-kreuznach/MB08_mhjtge.jpg',
       },
       {
         id: 9,
-        galleryImage: './images/projects/bad-kreuznach/MB09.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108065/bisctec/projects/bad-kreuznach/MB09_uqvsya.jpg',
       },
       {
         id: 10,
-        galleryImage: './images/projects/bad-kreuznach/MB10.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108056/bisctec/projects/bad-kreuznach/MB10_d3tj76.jpg',
       },
     ],
   },
   {
     id: 2,
-    image: './images/projects/wr-neustadt/WNZ18.jpg',
+    image:
+      'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108059/bisctec/projects/wr-neustadt/WNZ18_jgzgza.jpg',
     title: 'Wr. Neustadt',
     quote:
       'Fingerstache umami squid, kinfolk subway tile selvage tumblr man braid viral kombucha gentrify fanny pack raclette pok pok mustache.',
     gallery: [
       {
         id: 1,
-        galleryImage: './images/projects/wr-neustadt/WNZ02.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108066/bisctec/projects/wr-neustadt/WNZ02_km8fgw.jpg',
       },
       {
         id: 3,
-        galleryImage: './images/projects/wr-neustadt/WNZ03.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108062/bisctec/projects/wr-neustadt/WNZ03_kmksmx.jpg',
       },
       {
         id: 4,
-        galleryImage: './images/projects/wr-neustadt/WNZ04.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108065/bisctec/projects/wr-neustadt/WNZ04_iqhi8f.jpg',
       },
       {
         id: 5,
-        galleryImage: './images/projects/wr-neustadt/WNZ05.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108061/bisctec/projects/wr-neustadt/WNZ05_bbxzz9.jpg',
       },
       {
         id: 6,
-        galleryImage: './images/projects/wr-neustadt/WNZ06.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108065/bisctec/projects/wr-neustadt/WNZ06_uaknan.jpg',
       },
       {
         id: 7,
-        galleryImage: './images/projects/wr-neustadt/WNZ07.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108069/bisctec/projects/wr-neustadt/WNZ07_yf9jfi.jpg',
       },
       {
         id: 9,
-        galleryImage: './images/projects/wr-neustadt/WNZ09.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108064/bisctec/projects/wr-neustadt/WNZ09_nk82bn.jpg',
       },
       {
         id: 10,
-        galleryImage: './images/projects/wr-neustadt/WNZ10.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108071/bisctec/projects/wr-neustadt/WNZ10_kshmsw.jpg',
       },
       {
         id: 11,
-        galleryImage: './images/projects/wr-neustadt/WNZ11.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108065/bisctec/projects/wr-neustadt/WNZ11_mcfmxp.jpg',
       },
       {
         id: 12,
-        galleryImage: './images/projects/wr-neustadt/WNZ12.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108064/bisctec/projects/wr-neustadt/WNZ12_vbjlln.jpg',
       },
       {
         id: 13,
-        galleryImage: './images/projects/wr-neustadt/WNZ13.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108071/bisctec/projects/wr-neustadt/WNZ13_igzbt6.jpg',
       },
       {
         id: 14,
-        galleryImage: './images/projects/wr-neustadt/WNZ14.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108071/bisctec/projects/wr-neustadt/WNZ14_djnlzx.jpg',
       },
       {
         id: 15,
-        galleryImage: './images/projects/wr-neustadt/WNZ15.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108060/bisctec/projects/wr-neustadt/WNZ15_h6jv8j.jpg',
       },
       {
         id: 16,
-        galleryImage: './images/projects/wr-neustadt/WNZ16.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108071/bisctec/projects/wr-neustadt/WNZ16_a5iqfn.jpg',
       },
 
       {
         id: 17,
-        galleryImage: './images/projects/wr-neustadt/WNZ17.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108071/bisctec/projects/wr-neustadt/WNZ17_sdaaoe.jpg',
       },
       {
         id: 18,
-        galleryImage: './images/projects/wr-neustadt/WNZ18.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108059/bisctec/projects/wr-neustadt/WNZ18_jgzgza.jpg',
       },
       {
         id: 19,
-        galleryImage: './images/projects/wr-neustadt/WNZ19.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108067/bisctec/projects/wr-neustadt/WNZ19_ifdawx.jpg',
       },
     ],
   },
   {
     id: 3,
-    image: './images/projects/bad-erlach/08.jpg',
+    image:
+      'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108056/bisctec/projects/bad-erlach/08_ytz8et.jpg',
     title: 'Bad Erlach',
     quote:
       'Fingerstache umami squid, kinfolk subway tile selvage tumblr man braid viral kombucha gentrify fanny pack raclette pok pok mustache.',
     gallery: [
       {
         id: 1,
-        galleryImage: './images/projects/bad-erlach/01.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108056/bisctec/projects/bad-erlach/01_kizzv2.jpg',
       },
       {
         id: 2,
-        galleryImage: './images/projects/bad-erlach/02.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108055/bisctec/projects/bad-erlach/02_xatprp.jpg',
       },
       {
         id: 3,
-        galleryImage: './images/projects/bad-erlach/03.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108055/bisctec/projects/bad-erlach/03_zltrpt.jpg',
       },
       {
         id: 4,
-        galleryImage: './images/projects/bad-erlach/04.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108055/bisctec/projects/bad-erlach/04_wlwujq.jpg',
       },
       {
         id: 5,
-        galleryImage: './images/projects/bad-erlach/05.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108055/bisctec/projects/bad-erlach/05_ddxkij.jpg',
       },
       {
         id: 6,
-        galleryImage: './images/projects/bad-erlach/06.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108055/bisctec/projects/bad-erlach/06_pomv9v.jpg',
       },
       {
         id: 7,
-        galleryImage: './images/projects/bad-erlach/07.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108060/bisctec/projects/bad-erlach/07_rqki7p.jpg',
       },
       {
         id: 8,
-        galleryImage: './images/projects/bad-erlach/08.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108056/bisctec/projects/bad-erlach/08_ytz8et.jpg',
       },
     ],
   },
@@ -194,30 +232,36 @@ const projectsData = [
   },
   {
     id: 5,
-    image: './images/projects/grohe-wien/5.jpg',
+    image:
+      'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108057/bisctec/projects/grohe-wien/5_p8dqmh.jpg',
     title: 'Grohe Wien',
     quote:
       'Fingerstache umami squid, kinfolk subway tile selvage tumblr man braid viral kombucha gentrify fanny pack raclette pok pok mustache.',
     gallery: [
       {
         id: 1,
-        galleryImage: './images/projects/grohe-wien/1.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108072/bisctec/projects/grohe-wien/1_rfgdin.jpg',
       },
       {
         id: 2,
-        galleryImage: './images/projects/grohe-wien/2.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108068/bisctec/projects/grohe-wien/2_pawyl3.jpg',
       },
       {
         id: 3,
-        galleryImage: './images/projects/grohe-wien/3.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108068/bisctec/projects/grohe-wien/3_tr65tp.jpg',
       },
       {
         id: 4,
-        galleryImage: './images/projects/grohe-wien/4.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108082/bisctec/projects/grohe-wien/4_epawq1.jpg',
       },
       {
         id: 5,
-        galleryImage: './images/projects/grohe-wien/5.jpg',
+        galleryImage:
+          'https://res.cloudinary.com/dfvwoddhr/image/upload/v1678108057/bisctec/projects/grohe-wien/5_p8dqmh.jpg',
       },
     ],
   },

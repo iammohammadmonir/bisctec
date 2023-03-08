@@ -1,8 +1,6 @@
 import React from 'react';
 import { DefaultPlayer as Video } from 'react-html5video';
 import 'react-html5video/dist/styles.css';
-import AboutImg from '../assets/img/about-us.png';
-import AboutVideo from '../assets/img/about.mp4';
 const About = () => {
   return (
     <section className='section-padding'>
@@ -13,7 +11,7 @@ const About = () => {
         </div>
         <div className='row mb-30'>
           <div className='col-lg-6'>
-            <div className=''>
+            <div>
               <p>
                 Wir sind ein Anlagenbau-Unternehmen, spezialisiert auf das
                 Engineering von LED-Screens und komplexen mechatronischen
@@ -57,12 +55,15 @@ const About = () => {
           <div className='col-lg-6'>
             <Video
               controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-              poster={AboutImg}
+              poster='https://res.cloudinary.com/dfvwoddhr/image/upload/v1678107924/bisctec/about-us_wperyk.jpg'
               onCanPlayThrough={() => {
                 // Do stuff
               }}
             >
-              <source src={AboutVideo} type='video/mp4' />
+              <source
+                src='https://res.cloudinary.com/dfvwoddhr/video/upload/v1678107938/bisctec/about_wsd7dy.mp4'
+                type='video/mp4'
+              />
             </Video>
           </div>
         </div>

@@ -44,8 +44,12 @@ const Contact = () => {
                   </div>
                   <div className='text'>
                     <h4>Phone</h4>
-                    <p className='mb-0'>info@bisctec.com</p>
-                    <p>supplier@bisctec.com</p>
+                    <p className='mb-0'>
+                      <a href='tel:+4917657745001'>+49 (176) 577 45 001</a>
+                    </p>
+                    <p>
+                      <a href='tel:+4369910100136'>+43 (699) 10 100 136</a>
+                    </p>
                   </div>
                 </div>
 
@@ -64,9 +68,13 @@ const Contact = () => {
               <div className='col-lg-8'>
                 <h2 className='mb-50'>Get in Touch</h2>
                 <form>
-                  <FormRow type='text' name='number' labelText='Your Name' />
-                  <FormRow type='text' name='number' labelText='Email' />
-                  <div className='row'>
+                  <div className='mb-20'>
+                    <FormRow type='text' name='number' labelText='Your Name' />
+                  </div>
+                  <div className='mb-20'>
+                    <FormRow type='text' name='number' labelText='Email' />
+                  </div>
+                  <div className='row mb-20'>
                     <div className='col-lg-6'>
                       <FormRow
                         type='text'
@@ -124,6 +132,13 @@ const Wrapper = styled.div`
 
     svg {
       font-size: 30px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      &:hover {
+        color: var(--color-red);
+      }
     }
   }
 `;

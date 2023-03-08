@@ -19,6 +19,7 @@ import {
 import data from '../data/projectsData';
 import { useState } from 'react';
 import styled from 'styled-components';
+import { BsXCircleFill } from 'react-icons/bs';
 
 const Projects = () => {
   const [popup, setPopup] = useState([]);
@@ -82,7 +83,7 @@ const Projects = () => {
           <div className='project-popup'>
             <div className='popup-body'>
               <div onClick={changeContent} className='close'>
-                Close
+                <BsXCircleFill />
               </div>
               <div className='content'>
                 <Swiper
