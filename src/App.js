@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
 const Loading = lazy(() => import('./components/Loading'));
 const Header = lazy(() => import('./components/Header'));
+const Footer = lazy(() => import('./components/Footer'));
 const Home = lazy(() => import('./pages/Home'));
 const Impressum = lazy(() => import('./pages/Impressum'));
 const Technology = lazy(() => import('./pages/Technology'));
@@ -24,6 +25,7 @@ function App() {
           <Route path='/thank-you' element={<Thanks />} />
         </Routes>
       </Suspense>
+      <Footer />
     </BrowserRouter>
   );
 }

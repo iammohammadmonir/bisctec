@@ -21,6 +21,7 @@ const initialState = {
   zip: '',
   city: '',
   country: '',
+  image: '',
 };
 
 const InqueryForm = () => {
@@ -50,6 +51,7 @@ const InqueryForm = () => {
       zip,
       city,
       country,
+      image,
     } = values;
     if (
       !projectTitle ||
@@ -85,6 +87,7 @@ const InqueryForm = () => {
       zip,
       city,
       country,
+      image,
     };
     createOrder(data);
   };
@@ -163,6 +166,18 @@ const InqueryForm = () => {
               type='text'
               name='map'
               value={values.map}
+              handleChange={handleChange}
+            />
+          </div>
+        </div>
+
+        <div className='inq-form file'>
+          <div className='inq-label'>Image</div>
+          <div className='inq-input'>
+            <FormRow2
+              type='file'
+              name='image'
+              value={values.image}
               handleChange={handleChange}
             />
           </div>
@@ -328,6 +343,10 @@ const Wrapper = styled.div`
       grid-template-columns: auto 1fr;
       align-items: center;
     }
+  }
+  .inq-form.file input {
+    display: flex;
+    padding: 2px 3px;
   }
 `;
 
