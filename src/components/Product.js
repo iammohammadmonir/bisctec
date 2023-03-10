@@ -39,7 +39,7 @@ const Product = () => {
     // eslint-disable-next-line
   }, [alertType === 'success', navigate]);
   return (
-    <Wrapper className='section-padding bg-dark-v2'>
+    <Wrapper id='produkte' className='section-padding bg-dark-v2'>
       <div className='container'>
         <div className='heading text-center mb-30'>
           <h6>Our Best</h6>

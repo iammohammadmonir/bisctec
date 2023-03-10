@@ -31,7 +31,7 @@ const Projects = () => {
   };
 
   return (
-    <Wrapper className='section-padding bg-dark-v2'>
+    <Wrapper id='projekt' className='section-padding bg-dark-v2'>
       <div className='container'>
         <div className='heading text-center mb-30'>
           <h6>Our Recent</h6>

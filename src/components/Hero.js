@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import videoBg from '../assets/img/main.mp4';
 const Hero = () => {
   return (
-    <Wrapper className='hero'>
+    <Wrapper id='home' className='hero'>
       <video src={videoBg} autoPlay loop muted />
       <div className='content'>
         <h1>

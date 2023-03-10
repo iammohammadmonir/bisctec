@@ -11,7 +11,7 @@ import data from '../data/testimonialsData';
 
 const Testimonials = () => {
   return (
-    <section className='section-padding bg-dark-v2'>
+    <section id='testimonials' className='section-padding bg-dark-v2'>
       <div className='container'>
         <div className='heading text-center mb-50'>
           <h6>our clients</h6>

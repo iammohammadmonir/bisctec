@@ -12,7 +12,7 @@ const Technologie = () => {
     setSelected(i);
   };
   return (
-    <section className='section-padding'>
+    <section id='technologie' className='section-padding'>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-4'>

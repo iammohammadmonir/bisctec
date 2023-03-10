@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 import LogoImg from '../assets/img/logo.svg';
 import {
@@ -21,7 +21,13 @@ const Header = () => {
       <div className='container'>
         <div className='navbar'>
           <div className='logo'>
-            <Link to='/'>
+            <Link
+              activeClass='active'
+              to='home'
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
               <img src={LogoImg} alt='Logo' />
             </Link>
           </div>
@@ -31,25 +37,88 @@ const Header = () => {
           <div className='menu'>
             <ul>
               <li>
-                <NavLink className='active-link' to='/'>
-                  Home
-                </NavLink>
+                <Link
+                  activeClass='active'
+                  to='about'
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  offset={-60}
+                >
+                  About
+                </Link>
               </li>
-
               <li>
-                <NavLink className='active-link' to='/technologie'>
+                <Link
+                  activeClass='active'
+                  to='produkte'
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  duration={500}
+                >
+                  Produkte
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass='active'
+                  to='services'
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  duration={500}
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass='active'
+                  to='projekt'
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  duration={500}
+                >
+                  Projekt
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass='active'
+                  to='technologie'
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  duration={500}
+                >
                   Technologie
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink className='active-link' to='/impressum'>
-                  Impressum
-                </NavLink>
+                <Link
+                  activeClass='active'
+                  to='testimonials'
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  duration={500}
+                >
+                  Testimonials
+                </Link>
               </li>
               <li>
-                <NavLink className='active-link' to='/kontakt'>
+                <Link
+                  activeClass='active'
+                  to='kontakt'
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  duration={500}
+                >
                   Kontakt
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </div>
@@ -71,41 +140,32 @@ const Header = () => {
                   <div className='sm-menu'>
                     <ul>
                       <li>
-                        <NavLink
+                        <Link
                           onClick={changeContent}
                           className='active-link'
                           to='/'
                         >
                           Home
-                        </NavLink>
+                        </Link>
                       </li>
 
                       <li>
-                        <NavLink
-                          onClick={changeContent}
-                          className='active-link'
-                          to='/technologie'
-                        >
-                          Technologie
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
+                        <Link
                           onClick={changeContent}
                           className='active-link'
                           to='/impressum'
                         >
                           Impressum
-                        </NavLink>
+                        </Link>
                       </li>
                       <li>
-                        <NavLink
+                        <Link
                           onClick={changeContent}
                           className='active-link'
                           to='/kontakt'
                         >
                           Kontakt
-                        </NavLink>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -139,13 +199,13 @@ const Header = () => {
 };
 
 const Wrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   color: #fff;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   .navbar {
     height: 60px;
     display: flex;
@@ -157,6 +217,7 @@ const Wrapper = styled.div`
         width: 150px;
         height: auto;
         display: flex;
+        z-index: 999;
       }
     }
     .menu {
@@ -173,6 +234,7 @@ const Wrapper = styled.div`
             padding: 10px 0;
             margin-left: 30px;
             display: block;
+            cursor: pointer;
 
             &.active,
             &:hover {
@@ -251,6 +313,7 @@ const Wrapper = styled.div`
             display: block;
             font-size: 24px;
             padding: 10px;
+            cursor: pointer;
             &:hover {
               color: var(--color-red);
             }

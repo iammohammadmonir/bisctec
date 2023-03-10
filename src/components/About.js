@@ -3,7 +3,7 @@ import { DefaultPlayer as Video } from 'react-html5video';
 import 'react-html5video/dist/styles.css';
 const About = () => {
   return (
-    <section className='section-padding'>
+    <section id='about' className='section-padding'>
       <div className='container'>
         <div className='heading text-center mb-50'>
           <h6>some Words</h6>
